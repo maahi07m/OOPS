@@ -33,6 +33,13 @@ print(b.balance)
 b.withdraw(1000)
 print(b.balance)
 '''
+output:
+	Mahi 1234656678 03cd70c0-b14d-47f5-a52c-5779378c9ce1 0
+eefcd02b-caef-4fe0-9964-58c4097751e1
+1000
+500
+Insufficent Funds!
+500
 After removing acc_no and adding the 
 creating the self.generate_account_no()
 Mahi 1234656678 14bdcc58-19fb-434b-849f-2579ab7e2faa 0
