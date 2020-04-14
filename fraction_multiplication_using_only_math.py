@@ -21,7 +21,7 @@ class Fraction:
     def denominator(self):
         return self._denominator
     
-    def __sub__(self,other):
+    def __mul__(self,other):
         result_numerator = (self.numerator*other.numerator)
         result_denominator = (self.denominator*other.denominator)
         print(self,end=' * ')
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     fraction_one = Fraction(*input_args[0])
     fraction_two = Fraction(*input_args[1])
 
-    result_fraction = fraction_one - fraction_two
+    result_fraction = fraction_one * fraction_two
 
     try:
         fraction_one._numerator
