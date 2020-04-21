@@ -73,6 +73,14 @@ class Store:
 		return store_obj
 		
 	def exclude(self, q_object):
+		exclude_obj = Store()
+		include_obj = self.filter(q_object)
+		for items in self.store_item:
+			if items not in include_obj.store_item:
+				exclude_obj.add_item(items)
+		return exclude_obj
+		
+		'''
 		store_obj = Store()
 		if q_object.operation == "EQ":
 			for i in self.store_item:
@@ -125,7 +133,7 @@ class Store:
 						store_obj.add_item(i)
 					
 		return store_obj
-		
+		'''
 		
 class Item:
 	def __init__(self, name=None, price=0, category=None):
