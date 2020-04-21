@@ -17,6 +17,10 @@ class Store:
 	def filter(self, q_object):
 		store_obj = Store()
 		if q_object.operation == "EQ":
+			for items in self.store_item:
+				if getattr(items,q_object.field) == q_object.value:
+					store_obj.add_item(items)
+			'''
 			for i in self.store_item:
 				if q_object.value == i.name:
 					store_obj.add_item(i)
@@ -24,7 +28,7 @@ class Store:
 					store_obj.add_item(i)
 				elif q_object.value == i.price:
 					store_obj.add_item(i)
-		
+			'''
 		elif q_object.operation == "GT":
 			for i in self.store_item:
 				if q_object.value < i.price:
